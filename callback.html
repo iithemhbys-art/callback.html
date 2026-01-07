@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OAuth Callback</title>
+</head>
+<body>
+  <h2>Authorization completed.</h2>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      document.body.innerHTML += "<p>Code received.</p>";
+      console.log("OAuth Code:", code);
+    } else {
+      document.body.innerHTML += "<p>No code found.</p>";
+    }
+  </script>
+</body>
+</html>
